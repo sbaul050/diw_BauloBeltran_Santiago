@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario lenguajes</title>
+</head>
+
+<body>
+    <h2>Lista de lenguajes de programación</h2>
+    <ul>
+        <li>MessiScriptInterpreter</li>
+        <li>Java</li>
+        <li>JavaScript</li>
+        <li>C#</li>
+        <li>Html</li>
+    </ul>
+
+    <ol>
+        <li><a href="https://github.com/Erawaa/MessiScriptInterpreter">MessiScriptInterpreter</a></li>
+        <li><a href="https://www.java.com/es/">Java</a></li>
+        <li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript">JavaScript</a></li>
+        <li><a href="https://dotnet.microsoft.com/es-es/languages/csharp">C#</a></li>
+        <li><a href="https://developer.mozilla.org/es/docs/Web/HTML">HTML</a></li>
+    </ol>
+
+    <form>
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre">
+        <fieldset>
+            <legend>¿Qué lenguajes conoces?</legend>
+            <div>
+                <input type="checkbox" id="messi">
+                <label for="messi">MessiScriptInterpreter</label>
+            </div>
+            <div>
+                <input type="checkbox" id="java">
+                <label for="java">Java</label>
+            </div>
+            <div>
+                <input type="checkbox" id="javascript">
+                <label for="javascript">JavaScript</label>
+            </div>
+            <div>
+                <input type="checkbox" id="csharp">
+                <label for="csharp">C#</label>
+            </div>
+            <div>
+                <input type="checkbox" id="html">
+                <label for="html">Html</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>¿Cúal es tu editor de código favorito?</legend>
+            <div>
+                <input type="radio" name="opcion" id="vs">
+                <label for="vs">VisualStudio</label>
+                <input type="radio" name="opcion" id="net">
+                <label for="net">Netbeans</label>
+                <input type="radio" name="opcion" id="intel">
+                <label for="intel">IntelliJ IDEA</label>
+            </div>
+        </fieldset>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+    </form>
+</body>
+
+</html>
