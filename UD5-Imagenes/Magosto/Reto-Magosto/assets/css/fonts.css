@@ -1,0 +1,63 @@
+
+
+/**
+ *
+ * Estilos de las fuentes
+ *
+ */
+
+@font-face {
+    font-family: 'Lato';
+    src: url(../fonts/Lato/Lato-Regular.ttf) format(truetype);
+    font-size: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url(../fonts/Lato/Lato-Italic.ttf)format(truetype);
+    font-size: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url(../fonts/Lato/Lato-Bold.ttf)format(truetype);
+    font-size: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url(../fonts/Lato/Lato-BoldItalic.ttf)format(truetype);
+    font-size: italic;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Arvo';
+    src: url(../fonts/Arvo/Arvo-Regular.ttf)format(truetype);
+    font-size: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Arvo';
+    src: url(../fonts/Arvo/Arvo-Italic.ttf)format(truetype);
+    font-size: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Arvo';
+    src: url(../fonts/Arvo/Arvo-Bold.ttf)format(truetype);
+    font-size: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Arvo';
+    src: url(../fonts/Arvo/Arvo-BoldItalic.ttf)format(truetype);
+    font-size: italic;
+    font-weight: 700;
+}

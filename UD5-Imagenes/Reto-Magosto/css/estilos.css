@@ -1,0 +1,134 @@
+/**
+ *
+ * Estilos generales de magosto
+ * Autor: Marina Vega Vázques
+ * Fecha: 16/11/2026
+ * Fichero: estilos.css
+ *
+ */
+@charset "UTF-8";
+@import "./fonts.css";
+
+
+/*=============================================
+ =            Estilos generales            =
+ =============================================*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fuente-cuerpo: 'Lato', Georgia, 'Times New Roman', Times, serif;
+  --fuente-titulos: 'Arvo', Verdana, Geneva, Tahoma, sans-serif;
+  --color-secundario: #633b25;
+  --color-texto: #38271e;
+  --color-texto-cabecera: #fff8ed;
+  --color-sobretitulos: #b65b2c;
+  --bg-color: #f4ede2;
+  --bg-cabecera-pie: #37271e;
+  --bg-panel: #fffdf9;
+  font: 14px/1.6 var(--fuente-cuerpo);
+  color: var(--color-texto);
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: repeat(2, auto) 1fr auto;
+  grid-template-areas:
+    "cabecera cabecera"
+    "menu menu"
+    "contenido contenido"
+    "pie pie";
+  /* grid-template-rows: repeat(2, auto) 1fr auto; */
+  background-color: var(--bg-color);
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.cabecera, footer{
+  background-color: var(--bg-cabecera-pie);
+}
+
+h1{
+  color: var(--color-texto-cabecera);
+}
+
+h2, h3{
+  color: var(--color-secundario);
+}
+/*=============================================
+=            Estilos de la cabecera            =
+=============================================*/
+
+.cabecera {
+  grid-area: cabecera;
+}
+
+.header-logo{
+  width: 150px;
+}
+
+/*=====  End of Estilos de la cabecera  ======*/
+
+
+/*=============================================
+=            Estilos del menú            =
+=============================================*/
+.menu {
+  grid-area: menu;
+
+}
+
+.menu a::after{
+  content: "";
+  width: 0;
+  height: 3px;
+  border-radius: 10%;
+  background-color: transparent;
+}
+
+.menu a:hover::after{
+  width: 100%;
+
+}
+
+.menu a{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*=====  End of Estilos del menú  ======*/
+
+
+/*=============================================
+=            Estilos del main            =
+=============================================*/
+.contenido {
+  grid-area: contenido;
+  width: min(1120px, 92%);
+
+}
+
+
+/*=====  End of Estilos del main  ======*/
+
+
+/*=============================================
+=            Estilos del pie            =
+=============================================*/
+.pie {
+  grid-area: pie;
+}
+
+
+/*=====  End of Estilos del pie  ======*/
