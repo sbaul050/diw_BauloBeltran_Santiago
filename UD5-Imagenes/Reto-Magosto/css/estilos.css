@@ -47,6 +47,17 @@ body {
     "pie pie";
   /* grid-template-rows: repeat(2, auto) 1fr auto; */
   background-color: var(--bg-color);
+  color: var(--color-texto);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.contenido {
+  max-width: 1120px;
+  display: grid;
+  place-items: center;
+  margin: 2.5rem;
+  gap: 1.8rem;
 }
 
 img {
@@ -54,27 +65,100 @@ img {
   object-fit: cover;
 }
 
-.cabecera, footer{
+.cabecera,
+footer {
   background-color: var(--bg-cabecera-pie);
 }
 
-h1{
+h1 {
+  font-size: clamp(2.2rem, 1.5rem + 4vw, 4.5rem);
+  line-height: 1.08;
+  text-shadow: 2px 3px 8px #24130d;
+}
+
+h2,
+h3 {
+  color: var(--color-secundario);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 1.2rem + 2vw, 3rem);
+}
+
+h3 {
+  font-size: 1.4rem;
+}
+
+h1,
+footer,
+.dato {
   color: var(--color-texto-cabecera);
 }
 
-h2, h3{
-  color: var(--color-secundario);
+figcaption {
+  color: #76675b;
 }
+
+.dato-numero {
+  font-size: 2.4rem;
+  line-height: 1;
+  font-family: Georgia, serif;
+}
+
+.dato-mes {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 0.13em;
+}
+
 /*=============================================
 =            Estilos de la cabecera            =
 =============================================*/
 
+header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: var(--color-texto-cabecera);
+}
+
+hgroup{
+  justify-items: center;
+}
 .cabecera {
   grid-area: cabecera;
 }
 
-.header-logo{
-  width: 150px;
+.header-logo {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.header-logo>.sobretitulo,
+a {
+  color: #ffd79a;
+}
+
+a:hover,
+a:active {
+  color: #ffd18a;
+}
+
+.dato {
+  justify-self: center;
+  align-self: center;
+  background-color: var(--color-secundario);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  gap: 10px;
+  margin: 10px;
 }
 
 /*=====  End of Estilos de la cabecera  ======*/
@@ -85,27 +169,43 @@ h2, h3{
 =============================================*/
 .menu {
   grid-area: menu;
-
+  background-color: var(--color-secundario);
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 }
 
-.menu a::after{
-  content: "";
-  width: 0;
-  height: 3px;
-  border-radius: 10%;
-  background-color: transparent;
-}
-
-.menu a:hover::after{
-  width: 100%;
-
-}
-
-.menu a{
+.menu a {
   display: flex;
   flex-direction: column;
   align-items: center;
+  font: 1.4rem;
+  text-decoration: none;
 }
+
+.menu a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  border-radius: 20px;
+  background-color: transparent;
+}
+
+.menu a:hover::after {
+  width: 100%;
+  background-color: #ffd18a;
+  transition: all 0.5s ease-out;
+}
+
+.menu>ul {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 
 /*=====  End of Estilos del menú  ======*/
 
@@ -119,6 +219,128 @@ h2, h3{
 
 }
 
+.etiqueta,
+.sobretitulo {
+  color: var(--color-sobretitulos);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 0.13em;
+}
+
+.panel,
+.card {
+  background-color: var(--bg-panel);
+}
+
+.cards {
+  display: grid;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.panel {
+  border-radius: 14px;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  box-shadow: 0 5px 18px rgba(65, 39, 22, 0.09);
+}
+
+.card {
+  border-radius: 12px;
+  padding: clamp(1.2rem, 3vw, 2rem);
+
+}
+
+.card>img {
+  height: 190px;
+  object-fit: cover;
+  border-radius: 8px;
+  filter: brightness(85%)
+}
+
+.card>img:hover {
+  filter: brightness(100%)
+}
+
+.card:hover {
+  transform: translateX(-4px) translateY(-4px);
+  transition: .2s;
+}
+
+.cartel-figura>img {
+  filter: sepia(40%) contrast(110%) brightness(95%);
+}
+
+.cartel-figura>img:hover {
+  filter: sepia(0) contrast(1) brightness(1);
+  transition: filter 0.5s ease;
+}
+
+.lendas {
+  background-color: #ead9c3;
+}
+
+
+input:not([type="checkbox"]),
+#tema,
+#mensaxe {
+  background-color: #ffffff;
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #b9aa9b;
+  border-radius: 10px;
+}
+
+input:focus,
+#tema:focus,
+#mensaxe:focus {
+  border-color: #a65d2b;
+  background-color: wheat;
+}
+
+input:valid {
+  border-color: #39834b;
+}
+
+input:invalid {
+  border-color: #bd4035;
+}
+
+.btn {
+  background-color: var(--color-secundario);
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 10px;
+  width: 95%;
+  padding: 12px 16px;
+  border: 1.5px solid #b9aa9b;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  outline: 3px solid var(--color-secundario);
+  outline-offset: 4px;
+}
+
+.contacto {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px;
+}
+
+label:has() {
+  font-weight: 700;
+}
+
+#privacidad {
+  scale: 1.2;
+  accent-color: var(--color-secundario);
+  margin: 5px;
+}
 
 /*=====  End of Estilos del main  ======*/
 
@@ -130,5 +352,53 @@ h2, h3{
   grid-area: pie;
 }
 
+footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
 
 /*=====  End of Estilos del pie  ======*/
+
+
+
+@media (min-width: 768px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .cabecera{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .introduccion{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1.5rem;
+  }
+
+  .tradiciones{
+    width: 100%;
+  }
+
+  .contenido{
+    margin: 10px auto;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+    gap: 1.5rem;
+  }
+  
+  .lendas, .contacto{
+    
+  }
+}
