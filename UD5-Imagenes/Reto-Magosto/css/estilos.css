@@ -52,17 +52,10 @@ body {
   line-height: 1.6;
 }
 
-.contenido {
-  max-width: 1120px;
-  display: grid;
-  place-items: center;
-  margin: 2.5rem;
-  gap: 1.8rem;
-}
-
 img {
   width: 100%;
   object-fit: cover;
+  border-radius: 10px;
 }
 
 .cabecera,
@@ -71,13 +64,21 @@ footer {
 }
 
 h1 {
+  font-family: var(--fuente-titulos);
   font-size: clamp(2.2rem, 1.5rem + 4vw, 4.5rem);
   line-height: 1.08;
   text-shadow: 2px 3px 8px #24130d;
 }
 
+h1,
+footer,
+.dato {
+  color: var(--color-texto-cabecera);
+}
+
 h2,
 h3 {
+  font-family: var(--fuente-titulos);
   color: var(--color-secundario);
 }
 
@@ -89,28 +90,6 @@ h3 {
   font-size: 1.4rem;
 }
 
-h1,
-footer,
-.dato {
-  color: var(--color-texto-cabecera);
-}
-
-figcaption {
-  color: #76675b;
-}
-
-.dato-numero {
-  font-size: 2.4rem;
-  line-height: 1;
-  font-family: Georgia, serif;
-}
-
-.dato-mes {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  font-weight: 700;
-  line-height: 0.13em;
-}
 
 /*=============================================
 =            Estilos de la cabecera            =
@@ -120,14 +99,21 @@ header {
   display: flex;
   align-items: center;
   flex-direction: column;
-  color: var(--color-texto-cabecera);
+  color: var(--color-texto);
 }
 
-hgroup{
-  justify-items: center;
+.seccion-cabecera{
+  display: flex;
+  align-items: start;
 }
+
 .cabecera {
   grid-area: cabecera;
+}
+
+hgroup {
+  justify-items: center;
+  text-align: center;
 }
 
 .header-logo {
@@ -148,18 +134,6 @@ a:active {
   color: #ffd18a;
 }
 
-.dato {
-  justify-self: center;
-  align-self: center;
-  background-color: var(--color-secundario);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  border-radius: 10px;
-  gap: 10px;
-  margin: 10px;
-}
 
 /*=====  End of Estilos de la cabecera  ======*/
 
@@ -181,6 +155,7 @@ a:active {
   align-items: center;
   font: 1.4rem;
   text-decoration: none;
+  font-size: 1.5rem;
 }
 
 .menu a::after {
@@ -200,10 +175,10 @@ a:active {
 .menu>ul {
   display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 
@@ -215,8 +190,33 @@ a:active {
 =============================================*/
 .contenido {
   grid-area: contenido;
+  justify-self: center;
   width: min(1120px, 92%);
+  min-height: 100vh;
+  margin: 2.5rem;
+  gap: 1.8rem;
 
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, auto);
+  grid-template-areas:
+    "introduccion introduccion"
+    "cartel cartel"
+    "tradiciones tradiciones"
+    "lendas lendas"
+    "contacto contacto";
+}
+
+.introduccion {
+  grid-area: introduccion;
+}
+
+.cartel {
+  grid-area: cartel;
+}
+
+.tradiciones {
+  grid-area: tradiciones;
 }
 
 .etiqueta,
@@ -228,9 +228,63 @@ a:active {
   line-height: 0.13em;
 }
 
+.sobretitulo {
+  font-family: var(--fuente-titulos);
+}
+
+.etiqueta {
+  font-family: var(--fuente-cuerpo);
+  letter-spacing: 2px;
+}
+
+.dato {
+  background-color: var(--color-secundario);
+  justify-self: center;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 10px;
+  gap: 10px;
+  margin: 10px;
+}
+
+figcaption {
+  color: #76675b;
+}
+
+.dato-numero {
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 1;
+  font-family: Georgia, serif;
+}
+
+.dato-mes {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 0.13em;
+  letter-spacing: 2px;
+}
+
+.cartel-figura {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .panel,
 .card {
   background-color: var(--bg-panel);
+}
+
+
+.panel {
+  border-radius: 14px;
+  padding: clamp(1.2rem, 3vw, 2rem);
+  box-shadow: 0 5px 18px rgba(65, 39, 22, 0.09);
 }
 
 .cards {
@@ -239,16 +293,9 @@ a:active {
   list-style: none;
 }
 
-.panel {
-  border-radius: 14px;
-  padding: clamp(1.2rem, 3vw, 2rem);
-  box-shadow: 0 5px 18px rgba(65, 39, 22, 0.09);
-}
-
 .card {
   border-radius: 12px;
   padding: clamp(1.2rem, 3vw, 2rem);
-
 }
 
 .card>img {
@@ -277,9 +324,20 @@ a:active {
 }
 
 .lendas {
+  grid-area: lendas;
   background-color: #ead9c3;
 }
 
+.contacto {
+  grid-area: contacto;
+  width: 100%;
+  border-radius: 14px;
+  border: 1px;
+}
+
+label:has() {
+  font-weight: 700;
+}
 
 input:not([type="checkbox"]),
 #tema,
@@ -306,16 +364,20 @@ input:invalid {
   border-color: #bd4035;
 }
 
+#privacidad {
+  scale: 1.2;
+  accent-color: var(--color-secundario);
+  margin: 5px;
+}
+
 .btn {
   background-color: var(--color-secundario);
   color: white;
   font-weight: 700;
   font-size: 1.2rem;
   padding: 1rem;
-  border-radius: 6px;
-  margin: 10px;
-  width: 95%;
-  padding: 12px 16px;
+  margin-top: 10px;
+  width: 100%;
   border: 1.5px solid #b9aa9b;
   border-radius: 10px;
 }
@@ -323,23 +385,6 @@ input:invalid {
 .btn:hover {
   outline: 3px solid var(--color-secundario);
   outline-offset: 4px;
-}
-
-.contacto {
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 6px;
-  border: 1px;
-}
-
-label:has() {
-  font-weight: 700;
-}
-
-#privacidad {
-  scale: 1.2;
-  accent-color: var(--color-secundario);
-  margin: 5px;
 }
 
 /*=====  End of Estilos del main  ======*/
@@ -352,7 +397,7 @@ label:has() {
   grid-area: pie;
 }
 
-footer{
+footer {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -372,33 +417,32 @@ footer{
 }
 
 @media (min-width: 1024px) {
-  .cabecera{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+  .contenido {
+    grid-template-areas:
+      "introduccion introduccion"
+      "cartel cartel"
+      "tradiciones tradiciones"
+      "lendas contacto"
   }
 
-  .introduccion{
+  .cabecera {
+    display: flex;
+    flex-direction: row;
+  }
+
+  hgroup {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cartel-figura>img {
+    width: 700px;
+    margin: 20px;
+  }
+
+  .introduccion {
     display: grid;
     grid-template-columns: 1fr auto;
     gap: 1.5rem;
-  }
-
-  .tradiciones{
-    width: 100%;
-  }
-
-  .contenido{
-    margin: 10px auto;
-  }
-
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
-    gap: 1.5rem;
-  }
-  
-  .lendas, .contacto{
-    
   }
 }
