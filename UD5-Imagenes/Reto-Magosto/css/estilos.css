@@ -70,7 +70,7 @@ h1 {
   text-shadow: 2px 3px 8px #24130d;
 }
 
-h1,
+hgroup,
 footer,
 .dato {
   color: var(--color-texto-cabecera);

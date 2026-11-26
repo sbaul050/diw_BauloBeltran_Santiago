@@ -13,7 +13,8 @@
   /*En esta ocasión las siglas no son colores, sino parámetros: 
   Hue (tono), Saturation (saturacion) y Lightness (luminosidad).
 */
-  --clr-primario: hsl(206, 80%, 32%);
+  --clr-primario: hsl(206, 82%, 26%);
+  --clr-primario-oscuro: hsl(216, 65%, 27%);
   --clr-primario-claro: hsl(189, 48%, 63%);
   --clr-secundario: hsl(206, 100%, 96%);
   --clr-letra: hsl(209, 61%, 16%);
@@ -53,6 +54,7 @@ body {
   align-items: center;
   background-color: var(--clr-fondo);
   color: var(--clr-letra);
+  font-family: var(--ff-primary);
 }
 
 ul.empleados {
@@ -148,6 +150,11 @@ header:hover .linea{
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  transition: var(--transition);
+}
+
+.empleado:hover{
+  box-shadow: var(--dark-shadow);
 }
 
 .empleado-figure{
@@ -188,6 +195,17 @@ header:hover .linea{
 .empleado-img{
   border-radius: 50%;
   height: 100%;
+  position: relative;
+  transition: var(--transition);
+}
+
+.empleado-img:hover{
+  filter: grayscale(100%);
+}
+
+i.icono{
+  color: var(--clr-primario-oscuro);
+  font-size: 1.4rem;
 }
 
 .btn{
@@ -197,6 +215,11 @@ header:hover .linea{
   border-radius: var(--radius);
   border: 1px solid var(--clr-primario);
   color: var(--clr-primario);
+}
+
+.btn:hover{
+  background-color: var(--clr-primario);
+  color: var(--clr-secundario);
 }
 /*=====  End of Estilos para el main  ======*/
 
